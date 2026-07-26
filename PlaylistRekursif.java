@@ -16,35 +16,41 @@ public class PlaylistRekursif {
     }
   }
 
+  /**
+   * Tujuan: Menghitung total durasi semua lagu dalam playlist.
+   * Base Case: Jika n == 0, berarti tidak ada lagu yang tersisa untuk dijumlahkan, sehingga mengembalikan 0.
+   * Recursive Case: Menambahkan durasi lagu terakhir (list[n - 1]) ke total durasi dari sisa lagu (totalDurasi(list, n - 1)).
+   * Kompleksitas Waktu: O(n) - Linear, karena fungsi memanggil dirinya sendiri sebanyak n kali/jumlah lagu.
+   */
   public static double totalDurasi(Lagu[] list, int n) {
     if (n == 0) {
-        return 0;
+      return 0;
     }
     return list[n - 1].getDurasi() + totalDurasi(list, n - 1);
-    }
+  }
   
   /**
-     * Tujuan: Menampilkan daftar lagu secara terbalik dari akhir ke awal.
-     * Base Case: Jika index == 0, iterasi berhenti karena sudah mencapai awal array.
-     * Recursive Case: Mencetak lagu pada index saat ini, lalu memanggil dirinya sendiri dengan index - 1.
-     * Kompleksitas Waktu: O(n) - Linear, karena fungsi memanggil dirinya sendiri sebanyak n kali/jumlah lagu.
-     */
-    public static void tampilkanMundur(Lagu[] list, int index) {
-        // Base case
-        if (index == 0) {
-            return; 
-        }
-        
-        // Recursive case
-        System.out.println(index + ". " + list[index - 1].getJudul());
-        
-        // Memanggil fungsi itu lagi dengan index berkurang 1
-        tampilkanMundur(list, index - 1);
+   * Tujuan: Menampilkan daftar lagu secara terbalik dari akhir ke awal.
+   * Base Case: Jika index == 0, iterasi berhenti karena sudah mencapai awal array.
+   * Recursive Case: Mencetak lagu pada index saat ini, lalu memanggil dirinya sendiri dengan index - 1.
+   * Kompleksitas Waktu: O(n) - Linear, karena fungsi memanggil dirinya sendiri sebanyak n kali/jumlah lagu.
+   */
+  public static void tampilkanMundur(Lagu[] list, int index) {
+    // Base case
+    if (index == 0) {
+        return; 
     }
+    
+    // Recursive case
+    System.out.println(index + ". " + list[index - 1].getJudul() + " - " + list[index - 1].getArtis() + " (" + list[index - 1].getDurasi() + " menit)");
+    
+    // Memanggil fungsi itu lagi dengan index berkurang 1
+    tampilkanMundur(list, index - 1);
+  }
 
   public static double cariDurasiTerpanjang(Lagu[] list, int index) {
     // implementasi fungsi cariDurasiTerpanjang disini
-    return null;
+    return 0.0d;
   }
 
   public int getJumlahLagu() {
