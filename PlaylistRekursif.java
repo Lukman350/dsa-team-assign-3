@@ -51,4 +51,8 @@ public class PlaylistRekursif {
   public int getJumlahLagu() {
     return jumlahLagu;
   }
+
+  public Lagu[] getLaguList() {
+      return laguList;
+  }
 }
