@@ -74,11 +74,7 @@ public class Main {
           // Menampilkan hasil pengukuran waktu eksekusi
           System.out.printf("%-10s %-20s %-20s %-20s%n", "Kapasitas", "Total Durasi (ns)", "Tampilkan Mundur (ns)", "Cari Durasi Terpanjang (ns)");
           for (PerformanceData data : performanceDataList) {
-              System.out.printf("%-10d %-20d %-20d %-20d%n",
-                      data.getKapasitas(),
-                      data.getTotalDurasiTime(),
-                      data.getTampilkanMundurTime(),
-                      data.getCariDurasiTerpanjangTime());
+            data.printPerformanceData();
           }
         }
         case 5 -> System.out.println("Keluar dari program.");
