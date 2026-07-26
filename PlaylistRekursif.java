@@ -23,10 +23,18 @@ public class PlaylistRekursif {
 
     return laguList[n - 1].getDurasi() + totalDurasi(n - 1);
   }
-
-  public void tampilkanMundur(int index) {
-    // implementasi fungsi tampilkanMundur disini
-  }
+    public static void tampilkanMundur(Lagu[] list, int index) {
+        // Base case
+        if (index == 0) {
+            return; 
+        }
+        
+        // Recursive case
+        System.out.println(index + ". " + list[index - 1].getJudul());
+        
+        // Memanggil fungsi itu lagi dengan index berkurang 1
+        tampilkanMundur(list, index - 1);
+    }
 
   public Lagu cariDurasiTerpanjang(int index) {
     // implementasi fungsi cariDurasiTerpanjang disini
