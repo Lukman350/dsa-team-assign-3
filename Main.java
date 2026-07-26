@@ -30,7 +30,34 @@ public class Main {
           PlaylistRekursif.tampilkanMundur(playlist.getLaguList(), playlist.getJumlahLagu());
         }
         case 3 -> {
-          // Implementasikan mencari durasi lagu terpanjang di sini
+          Lagu[] daftarLagu = playlist.getLaguList();
+          int jumlahLagu = playlist.getJumlahLagu();
+
+          if (jumlahLagu == 0) {
+            System.out.println("Playlist masih kosong.");
+          } else {
+            double durasiTerpanjang =
+                PlaylistRekursif.cariDurasiTerpanjang(
+                    daftarLagu, jumlahLagu);
+
+            Lagu laguTerpanjang = daftarLagu[0];
+
+            for (int i = 0; i < jumlahLagu; i++) {
+              if (Double.compare(
+                  daftarLagu[i].getDurasi(),
+                  durasiTerpanjang) == 0) {
+                laguTerpanjang = daftarLagu[i];
+                break;
+              }
+            }
+
+            System.out.printf(
+                "Lagu terpanjang: \"%s\" - %s (%.2f menit)%n",
+                laguTerpanjang.getJudul(),
+                laguTerpanjang.getArtis(),
+                laguTerpanjang.getDurasi()
+            );
+          }
         }
         case 4 -> {
           // Lakukan pengukuran waktu eksekusi untuk setiap fungsi dengan kapasitas yang berbeda (misalnya 5, 10, 15, 20) dan tampilkan hasilnya di sini
