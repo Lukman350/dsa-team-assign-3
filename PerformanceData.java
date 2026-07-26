@@ -43,7 +43,16 @@ public class PerformanceData {
     this.cariDurasiTerpanjangTime = cariDurasiTerpanjangTime;
   }
 
+  // Konversi nanodetik ke milidetik agar sesuai format yang diminta soal ("X ms")
+  private double toMillis(long nanos) {
+    return nanos / 1_000_000.0;
+  }
+
   public void printPerformanceData() {
-    System.out.printf("%-10d %-20d %-20d %-20d%n", kapasitas, totalDurasiTime, tampilkanMundurTime, cariDurasiTerpanjangTime);
+    System.out.printf("%-10d %-20.3f %-20.3f %-20.3f%n",
+        kapasitas,
+        toMillis(totalDurasiTime),
+        toMillis(tampilkanMundurTime),
+        toMillis(cariDurasiTerpanjangTime));
   }
 }
