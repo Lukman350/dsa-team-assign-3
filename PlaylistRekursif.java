@@ -48,9 +48,21 @@ public class PlaylistRekursif {
     tampilkanMundur(list, index - 1);
   }
 
+    /**
+   * Tujuan: Mencari durasi lagu terpanjang dalam playlist.
+   * Base Case: Jika index == 0, mengembalikan 0.
+   * Recursive Case: Membandingkan durasi lagu saat ini dengan hasil sebelumnya.
+   * Kompleksitas Waktu: O(n) dengan growth rate linear.
+   */
   public static double cariDurasiTerpanjang(Lagu[] list, int index) {
-    // implementasi fungsi cariDurasiTerpanjang disini
-    return 0.0d;
+    if (index == 0) {
+      return 0.0;
+    }
+
+    double maksimumSebelumnya =
+        cariDurasiTerpanjang(list, index - 1);
+
+    return Math.max(list[index - 1].getDurasi(), maksimumSebelumnya);
   }
 
   public int getJumlahLagu() {
