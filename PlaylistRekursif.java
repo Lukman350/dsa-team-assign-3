@@ -1,17 +1,3 @@
-/*
- * =====================================================================
- * Tugas Kelompok 3 - COSC6025 Data Structures and Algorithm Analysis
- * Topik   : Algorithmic Analysis, Mathematical Induction, and Recursive Functions
- *
- * Anggota Kelompok:
- *  1. <ISI NAMA LENGKAP>   - <ISI NIM>
- *  2. <ISI NAMA LENGKAP>   - <ISI NIM>
- *  3. <ISI NAMA LENGKAP>   - <ISI NIM>
- * Kelas   : <ISI KELAS>
- * =====================================================================
- * TODO: Ganti placeholder di atas dengan data anggota kelompok yang sebenarnya
- * sebelum dikumpulkan.
- */
 public class PlaylistRekursif {
   private final Lagu[] laguList;
   private int jumlahLagu;
@@ -52,7 +38,7 @@ public class PlaylistRekursif {
   public static void tampilkanMundur(Lagu[] list, int index) {
     // Base case
     if (index == 0) {
-        return; 
+      return; 
     }
     
     // Recursive case
@@ -62,7 +48,7 @@ public class PlaylistRekursif {
     tampilkanMundur(list, index - 1);
   }
 
-    /**
+  /**
    * Tujuan: Mencari durasi lagu terpanjang dalam playlist.
    * Base Case: Jika index == 0, mengembalikan 0.
    * Recursive Case: Membandingkan durasi lagu saat ini dengan hasil sebelumnya.
@@ -73,8 +59,7 @@ public class PlaylistRekursif {
       return 0.0;
     }
 
-    double maksimumSebelumnya =
-        cariDurasiTerpanjang(list, index - 1);
+    double maksimumSebelumnya = cariDurasiTerpanjang(list, index - 1);
 
     return Math.max(list[index - 1].getDurasi(), maksimumSebelumnya);
   }
@@ -84,6 +69,6 @@ public class PlaylistRekursif {
   }
 
   public Lagu[] getLaguList() {
-      return laguList;
+    return laguList;
   }
 }

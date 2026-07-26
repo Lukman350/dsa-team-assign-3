@@ -1,13 +1,18 @@
-/**
- * Team Assignment 3 - Group 4
- * Members:
- * - DEAN PANDEHEN SAHAY [2902760536]
- * - ADAM NUR HIDAYAT [2902801012]
- * - ACHMAD ALIF NASRULLOH [2902775065]
- * - LUKMAN NUL HAKIM [2902765562]
- * - MUHAMAD FAIRUS [2902792090]
+/*
+ * =====================================================================
+ * Tugas Kelompok 3 - COSC6025 Data Structures and Algorithm Analysis
+ * Topik   : Algorithmic Analysis, Mathematical Induction, and Recursive Functions
+ * Group   : 4
+ *
+ * Anggota Kelompok:
+ * 1. DEAN PANDEHEN SAHAY [2902760536]
+ * 2. ADAM NUR HIDAYAT [2902801012]
+ * 3. ACHMAD ALIF NASRULLOH [2902775065]
+ * 4. LUKMAN NUL HAKIM [2902765562]
+ * 5. MUHAMAD FAIRUS [2902792090]
+ * Kelas   : JZCA - LEC
+ * =====================================================================
  */
-
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.Scanner;
