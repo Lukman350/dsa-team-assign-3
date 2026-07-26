@@ -16,13 +16,12 @@ public class PlaylistRekursif {
     }
   }
 
-  public double totalDurasi(int n) {
+  public static double totalDurasi(Lagu[] list, int n) {
     if (n == 0) {
-      return 0;
+        return 0;
     }
-
-    return laguList[n - 1].getDurasi() + totalDurasi(n - 1);
-  }
+    return list[n - 1].getDurasi() + totalDurasi(list, n - 1);
+    }
   
   /**
      * Tujuan: Menampilkan daftar lagu secara terbalik dari akhir ke awal.
@@ -43,7 +42,7 @@ public class PlaylistRekursif {
         tampilkanMundur(list, index - 1);
     }
 
-  public Lagu cariDurasiTerpanjang(int index) {
+  public static double cariDurasiTerpanjang(Lagu[] list, int index) {
     // implementasi fungsi cariDurasiTerpanjang disini
     return null;
   }
