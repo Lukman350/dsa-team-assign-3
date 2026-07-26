@@ -1,3 +1,15 @@
+/**
+ * Team Assignment 3 - Group 4
+ * Members:
+ * - DEAN PANDEHEN SAHAY [2902760536]
+ * - ADAM NUR HIDAYAT [2902801012]
+ * - ACHMAD ALIF NASRULLOH [2902775065]
+ * - LUKMAN NUL HAKIM [2902765562]
+ * - MUHAMAD FAIRUS [2902792090]
+ */
+
+import java.io.OutputStream;
+import java.io.PrintStream;
 import java.util.Scanner;
 
 public class Main {
@@ -60,9 +72,15 @@ public class Main {
           }
         }
         case 4 -> {
-          // Lakukan pengukuran waktu eksekusi untuk setiap fungsi dengan kapasitas yang berbeda (misalnya 5, 10, 15, 20) dan tampilkan hasilnya di sini
-          int[] kapasitasArray = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100};
+          // Lakukan pengukuran waktu eksekusi untuk setiap fungsi dengan kapasitas yang berbeda
+          // n=3, 5, 10 ditambahkan agar cocok dengan tabel perbandingan yang diminta pada laporan
+          int[] kapasitasArray = {3, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100};
           PerformanceData[] performanceDataList = new PerformanceData[kapasitasArray.length];
+
+          // Stream "dummy" untuk menampung output tampilkanMundur SAAT diukur,
+          // supaya waktu I/O (System.out.println) tidak ikut terhitung dan mengotori hasil pengukuran.
+          PrintStream originalOut = System.out;
+          PrintStream nullOut = new PrintStream(OutputStream.nullOutputStream());
           for (int i = 0; i < kapasitasArray.length; i++) {
             int kapasitas = kapasitasArray[i];
             PlaylistRekursif tempPlaylist = new PlaylistRekursif(kapasitas);
@@ -81,9 +99,13 @@ public class Main {
             performanceData.setTotalDurasiTime(totalTime);
 
             // Mengukur waktu eksekusi tampilkanMundur
+            // Output dialihkan sementara ke null stream agar waktu print tidak ikut terukur,
+            // sehingga hasil pengukuran murni mencerminkan waktu komputasi rekursifnya saja.
+            System.setOut(nullOut);
             startTime = System.nanoTime();
             PlaylistRekursif.tampilkanMundur(tempPlaylist.getLaguList(), tempPlaylist.getJumlahLagu());
             endTime = System.nanoTime();
+            System.setOut(originalOut);
             totalTime = (endTime - startTime);
             performanceData.setTampilkanMundurTime(totalTime);
 
@@ -98,8 +120,8 @@ public class Main {
             performanceDataList[i] = performanceData;
           }
 
-          // Menampilkan hasil pengukuran waktu eksekusi
-          System.out.printf("%-10s %-20s %-20s %-20s%n", "Kapasitas", "Total Durasi (ns)", "Tampilkan Mundur (ns)", "Cari Durasi Terpanjang (ns)");
+          // Menampilkan hasil pengukuran waktu eksekusi (dalam milidetik)
+          System.out.printf("%-10s %-20s %-20s %-20s%n", "Kapasitas", "Total Durasi (ms)", "Tampilkan Mundur (ms)", "Cari Durasi Terpanjang (ms)");
           for (PerformanceData data : performanceDataList) {
             data.printPerformanceData();
           }

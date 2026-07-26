@@ -1,3 +1,17 @@
+/*
+ * =====================================================================
+ * Tugas Kelompok 3 - COSC6025 Data Structures and Algorithm Analysis
+ * Topik   : Algorithmic Analysis, Mathematical Induction, and Recursive Functions
+ *
+ * Anggota Kelompok:
+ *  1. <ISI NAMA LENGKAP>   - <ISI NIM>
+ *  2. <ISI NAMA LENGKAP>   - <ISI NIM>
+ *  3. <ISI NAMA LENGKAP>   - <ISI NIM>
+ * Kelas   : <ISI KELAS>
+ * =====================================================================
+ * TODO: Ganti placeholder di atas dengan data anggota kelompok yang sebenarnya
+ * sebelum dikumpulkan.
+ */
 public class PlaylistRekursif {
   private final Lagu[] laguList;
   private int jumlahLagu;
