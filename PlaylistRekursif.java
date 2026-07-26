@@ -23,6 +23,13 @@ public class PlaylistRekursif {
 
     return laguList[n - 1].getDurasi() + totalDurasi(n - 1);
   }
+  
+  /**
+     * Tujuan: Menampilkan daftar lagu secara terbalik dari akhir ke awal.
+     * Base Case: Jika index == 0, iterasi berhenti karena sudah mencapai awal array.
+     * Recursive Case: Mencetak lagu pada index saat ini, lalu memanggil dirinya sendiri dengan index - 1.
+     * Kompleksitas Waktu: O(n) - Linear, karena fungsi memanggil dirinya sendiri sebanyak n kali/jumlah lagu.
+     */
     public static void tampilkanMundur(Lagu[] list, int index) {
         // Base case
         if (index == 0) {
